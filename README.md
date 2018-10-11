@@ -1,4 +1,4 @@
-# Media Library Organiser `Pre-Alpha`
+# Media Library Organiser ######`Pre-Alpha`
 
 A program that'll automatically rename and organise all your offline media files.
 
