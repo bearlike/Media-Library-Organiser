@@ -1,5 +1,4 @@
-# Media Library Organiser
-#![#f03c15](https://placehold.it/15/f03c15/000000?text=HELLO) `#f03c15`
+# Media Library Organiser `Pre-Alpha`
 
 A program that'll automatically rename and organise all your offline media files.
 
