@@ -1,4 +1,5 @@
 # Media Library Organiser
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
 
 A program that'll automatically rename and organise all your offline media files.
 
