@@ -7,6 +7,7 @@
 import os
 import re
 import msvcrt
+
 def Title():
     os.system('mode con: cols=75 lines=30')
     print("    _       _                  _          _  ")
@@ -49,20 +50,19 @@ for file in files:
     temp = file
     extn = file[(len(file)-4) : len(file)]
     ##Specifically written for YTS and YIFY Files
-    if (file.endswith(".mp4") or file.endswith(".mkv")) :
-    if ".1080p" in temp:
-        sep = ".1080p"
-    elif ".720p" in temp:
-        sep = ".720p"
-    elif "[" in temp:
-        sep = "["
-    elif "1080p" in temp:
-        sep = "1080p"
-    elif "720p" in temp:
-        sep = "720p"
-
-    if "TamilRockers" in temp:
-        temp = temp.split(' - ',1)[1]
+    if(file.endswith(".mp4") or file.endswith(".mkv")) :
+        if ".1080p" in temp:
+            sep = ".1080p"
+        elif ".720p" in temp:
+            sep = ".720p"
+        elif "[" in temp:
+            sep = "["
+        elif "1080p" in temp:
+            sep = "1080p"
+        elif "720p" in temp:
+            sep = "720p"
+        if "TamilRockers" in temp:
+            temp = temp.split(' - ',1)[1]
 
         try:
             rest = temp.split(sep,1)[0]
