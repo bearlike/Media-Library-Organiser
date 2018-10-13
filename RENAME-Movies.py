@@ -111,5 +111,5 @@ if(i>0 or ErrorFlag==1):
 else:
     print("No Media File Found in Input Folder")
 print("Enter any key to exit...")
-print(" ")
+print()
 msvcrt.getch()
