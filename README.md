@@ -1,5 +1,5 @@
 # Media Library Organiser 
-###### `v1.0-rc3`
+###### `v0.9-rc3` `No-GUI` `Under-Construction`  
 
 A program that'll automatically rename and organise all your offline media files.
 
