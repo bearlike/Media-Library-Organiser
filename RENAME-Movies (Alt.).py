@@ -1,4 +1,6 @@
 ##Under Constructions
+from imdb import IMDb
+import re
 def FindYear(Str):
     yr = re.findall('([(]+[0-9]+[0-9]+[0-9]+[0-9]+[)])', str2)
     yr = str(yr)
@@ -11,8 +13,6 @@ def FindYear(Str):
         yr = "(----)"
     return(yr)
 
-from imdb import IMDb
-import re
 ia = IMDb()
 s_result = ia.search_movie('The Untouchables')
 movies = []
@@ -23,7 +23,7 @@ for movie in s_result:
     str2=str2.replace("\n","")
     str2=str2.replace("\"","")
     str2=str2.replace("\"","")
-
-
     movies.append(str2)
+    year_str=FindYear(str2)
+    print(year_str)
 print(movies)
