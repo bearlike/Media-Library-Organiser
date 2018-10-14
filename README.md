@@ -8,7 +8,23 @@ A program that'll automatically rename and organise all your offline media files
 
 ### Prerequisites
 What things you need to run the program:
-* Python Compiler (3.7 Recommmended)
+- Python Compiler (3.7 Recommmended)- Install the following Packages:
+- strsim
+ -From pypi:
+ ```bash
+ pip install strsim
+ ```
+ -or clone this repository:
+ ```bash
+ git clone https://github.com/luozhouyang/python-string-similarity
+ cd python-string-similarity
+ pip install -r requirements.txt
+ ```
+- imdbpy
+ -From pypi:
+ ```bash
+ pip install imdbpy
+ ```
 
 ### Update Logs
 #### v1.1-rc3
