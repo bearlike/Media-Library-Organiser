@@ -24,7 +24,7 @@ What things you need to run the program:
 
 ### Features
 -  Offline Movie files are renamed and organized in format:
-```bash
+- ```bash
 <Movie_name> (<year>)
 ```
 
