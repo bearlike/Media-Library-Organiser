@@ -21,21 +21,22 @@ What things you need to run the program:
     ```bash
     pip install imdbpy
     ```
+
 ### Features
-*  Offline Movie files are renamed and organised in format:
-```
+-  Offline Movie files are renamed and organized in format:
+```bash
 <Movie_name> (<year>)
 ```
-* Offline TV_Series files are renamed and organised in format:
-```
+- Offline TV_Series files are renamed and organized in format:
+```bash
 <TV_Series_name>
 ```
-* All episodes of series are renamed in the format:
-```
+- All episodes of series are renamed in the format:
+```bash
  S<Season_number>E<Episode_Number>
 ```
-* All episodes of a series are moved inside a folder with their corresponding Season number in it:
-```
+- All episodes of a series are moved inside a folder with their corresponding Season number in it:
+```bash
 //<TV_Series_name>//S<Season_number>//
 ```
 
