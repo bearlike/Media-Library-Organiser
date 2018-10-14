@@ -2,21 +2,21 @@
 ###### `v1.1-a1` `No-GUI`  
 ### Features
 - Offline Movie files are renamed and organized in format:
-```
-<Movie_name> (<year>)
-```
+  ```bash
+  <Movie_name> (<year>)
+  ```
 
 - Offline TV_Series files are renamed and organized in format:
-```
-<TV_Series_name>
-```
+  ```bash
+  <TV_Series_name>
+  ```
 
 - All episodes of series are renamed in the format:
-```
-S<Season_number>E<Episode_Number>
-```
+  ```bash
+  S<Season_number>E<Episode_Number>
+  ```
 
 - All episodes of a series are moved inside a folder with their corresponding Season number in it:
-```
-//<TV_Series_name>//S<Season_number>//
-```
+  ```bash
+  //<TV_Series_name>//S<Season_number>//
+  ```
