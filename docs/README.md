@@ -4,8 +4,8 @@ A program that'll automatically bulk rename and organise your **Movie and TV-Sho
 
 #### What's New !
 * `[UPDATE]` Uses **imDB** to retrieve the most relevent movie names.
-* **To view the entire Update log** - [log-update](https://krishnaalagiri.github.io/Media-Library-Organiser/log-update.md)
-* **To view the features that are to added on the next version** - [current-working](https://krishnaalagiri.github.io/Media-Library-Organiser/current-working.md)
+* **To view the entire Update log** - [log-update](https://krishnaalagiri.github.io/Media-Library-Organiser/log-update)
+* **To view the features that are to added on the next version** - [current-working](https://krishnaalagiri.github.io/Media-Library-Organiser/current-working)
 
 
 ## Getting Started
