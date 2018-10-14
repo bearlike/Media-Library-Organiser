@@ -22,6 +22,7 @@ What things you need to run the program:
   - **imdbpy**
     ```bash
     pip install imdbpy
+    
 ### Usage
 * Step 1: Move all the media files that are to be renamed and organised into "/Input" folder.
 * Step 2: Run the appropirate .py file **RENAME-Movies.py** or **RENAME-Series.py**
