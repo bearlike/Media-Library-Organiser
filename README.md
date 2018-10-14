@@ -4,6 +4,7 @@ A program that'll automatically rename and organise all your offline media files
 
 #### What's New !
 * `[UPDATE]` Uses **imDB** to retrieve the most relevent movie names.
+**To veiw the entire Update log** - [log-update.md](https://github.com/KrishnaAlagiri/)
 
 ## Getting Started
 ### Prerequisites
