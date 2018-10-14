@@ -76,7 +76,6 @@ for file in files:
 ###############################################################################
 ##MOVIE TITLE RETRIEVE
         rest = FormatStr(temp)
-        len(rest)-4 = len(rest)-4
         year_str =  '('+ rest[len(rest)-4 : len(rest)] +')'
         rest = rest[0:len(rest)-4]
         Final = rest + year_str + extn
