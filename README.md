@@ -10,7 +10,7 @@ A program that'll automatically rename and organise all your offline media files
 What things you need to run the program:
 - Python Compiler (3.7 Recommmended)
 - Install the following Packages:
- - **strsim**
+  - **strsim**
   - From pypi:
  ```bash
  pip install strsim
@@ -21,7 +21,7 @@ What things you need to run the program:
  cd python-string-similarity
  pip install -r requirements.txt
  ```
- - imdbpy
+  - **imdbpy**
   - From pypi:
  ```bash
  pip install imdbpy
