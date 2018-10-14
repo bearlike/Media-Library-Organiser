@@ -1,6 +1,6 @@
 # Media Library Organiser
 ###### `v1.1-a1` `No-GUI`  
-A program that'll automatically rename and organise all your offline media files.
+A program that'll automatically bulk rename and organise your **Movie and TV-Shows Library** (ideal for maintaining your *xbmc* library). Movies and TV Shows are easily organized by your xbmc if they're given the right name.
 
 #### What's New !
 * `[UPDATE]` Uses **imDB** to retrieve the most relevent movie names.
@@ -38,7 +38,6 @@ What things you need to run the program:
 ```
 //<TV_Series_name>'//S<Season_number>//
 ```
-End with an example of getting some data out of the system or using it for a little demo
 
 
 ## Authors
@@ -47,6 +46,5 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Hat tip to anyone whose code was used.
+* Myself :P
