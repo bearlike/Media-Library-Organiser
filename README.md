@@ -5,19 +5,18 @@ A program that'll automatically bulk rename and organise your **Movie and TV-Sho
 #### What's New !
 * `[UPDATE]` Uses **imDB** to retrieve the most relevent movie names.
 * **To view the entire Update log** - [log-update.md](https://github.com/KrishnaAlagiri/Media-Library-Organiser/blob/master/log-update.md)
+* **To view the screenshots of the working** - [Screenshots](https://github.com/KrishnaAlagiri/Media-Library-Organiser/tree/master/Screenshots)
 
 ## Getting Started
 ### Prerequisites
 What things you need to run the program:
 - Python Compiler (3.7 Recommmended)
-- Install the following Packages:
+- Install the following Packages from pypi by using the following commands:
   - **strsim**
-    - From pypi:
     ```bash
     pip install strsim
     ```
   - **imdbpy**
-    - From pypi:
     ```bash
     pip install imdbpy
     ```
