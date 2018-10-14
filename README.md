@@ -5,7 +5,8 @@ A program that'll automatically bulk rename and organise your **Movie and TV-Sho
 #### What's New !
 * `[UPDATE]` Uses **imDB** to retrieve the most relevent movie names.
 * **To view the entire Update log** - [log-update.md](https://github.com/KrishnaAlagiri/Media-Library-Organiser/blob/master/log-update.md)
-* **To view the screenshots of the working** - [Screenshots](https://github.com/KrishnaAlagiri/Media-Library-Organiser/tree/master/Screenshots)
+* **To view the screenshots of the working** - ![Screenshots](https://github.com/KrishnaAlagiri/Media-Library-Organiser/raw/master/Screenshots/Movies%20-%20Before%20and%20After.PNG)
+
 
 ## Getting Started
 ### Prerequisites
@@ -35,7 +36,7 @@ What things you need to run the program:
 ```
 * All episodes of a series are moved inside a folder with their corresponding Season number in it:
 ```
-//<TV_Series_name>'//S<Season_number>//
+//<TV_Series_name>//S<Season_number>//
 ```
 
 
