@@ -39,9 +39,9 @@ What things you need to run the program:
 
 ### Screenshot
 #### RENAME-Movies.py
-* ![Screenshots_Movies](https://github.com/KrishnaAlagiri/Media-Library-Organiser/raw/master/Screenshots/Movies%20-%20Before%20and%20After.PNG)
+![Screenshots_Movies](https://github.com/KrishnaAlagiri/Media-Library-Organiser/raw/master/Screenshots/Movies%20-%20Before%20and%20After.PNG)
 #### RENAME-Series.py
-* ![Screenshots_TVShows](https://github.com/KrishnaAlagiri/Media-Library-Organiser/raw/master/Screenshots/TV%20Shows%20-%20Before%20and%20After.PNG)
+![Screenshots_TVShows](https://github.com/KrishnaAlagiri/Media-Library-Organiser/raw/master/Screenshots/TV%20Shows%20-%20Before%20and%20After.PNG)
 
 ## Authors
 * **Krishna Alagiri** - *Initial work* - [KrishnaAlagiri](https://github.com/KrishnaAlagiri/)
