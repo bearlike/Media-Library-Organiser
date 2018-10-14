@@ -1,31 +1,25 @@
 # Media Library Organiser
-###### `v1.1-rc3` `No-GUI`  
-
+###### `v1.1-a1` `No-GUI`  
 A program that'll automatically rename and organise all your offline media files.
 
+#### What's New !
+* `[UPDATE]` Uses **imDB** to retrieve the most relevent movie names.
+
 ## Getting Started
-
-
 ### Prerequisites
 What things you need to run the program:
 - Python Compiler (3.7 Recommmended)
 - Install the following Packages:
   - **strsim**
-  - From pypi:
- ```bash
- pip install strsim
- ```
-  - or clone this repository:
- ```bash
- git clone https://github.com/luozhouyang/python-string-similarity
- cd python-string-similarity
- pip install -r requirements.txt
- ```
+    - From pypi:
+    ```bash
+    pip install strsim
+    ```
   - **imdbpy**
-  - From pypi:
- ```bash
- pip install imdbpy
- ```
+    - From pypi:
+    ```bash
+    pip install imdbpy
+    ```
 ### Features
 *  Offline Movie files are renamed and organised in format:
 ```
