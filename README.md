@@ -44,6 +44,10 @@ S<Season_number>E<Episode_Number>
 //<TV_Series_name>//S<Season_number>//
 ```
 
+### Usage
+* Step 1: Move all the media files that are to be renamed and organised into "/Input" folder.
+* Step 2: Run the appropirate .py file **RENAME-Movies.py** or **RENAME-Series.py**
+* Step 3: If no error occurs, the organized files would be inside "/Output" folder
 ### Screenshot
 #### RENAME-Movies.py
 ![Screenshots_Movies](https://github.com/KrishnaAlagiri/Media-Library-Organiser/raw/master/Screenshots/Movies%20-%20Before%20and%20After.PNG)
