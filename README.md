@@ -1,5 +1,5 @@
-# Media Library Organiser 
-###### `v0.9-rc3` `No-GUI`  
+# Media Library Organiser
+###### `v1.1-rc3` `No-GUI`  
 
 A program that'll automatically rename and organise all your offline media files.
 
@@ -9,6 +9,13 @@ A program that'll automatically rename and organise all your offline media files
 ### Prerequisites
 What things you need to run the program:
 * Python Compiler (3.7 Recommmended)
+
+### Update Logs
+#### v1.1-rc3
+* `[UPDATE]` Uses **imDB** to retrieve the most relevent movie names.
+#### v1.0-rc3
+* Minor Bug Fixes
+* Major Improvements
 
 ### Features
 *  Offline Movie files are renamed and organised in format:
