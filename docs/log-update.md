@@ -1,4 +1,4 @@
-# [Media Library Organiser](https://krishnaalagiri.github.io/Media-Library-Organiser/)
+# [Media Library Organiser](krishnaalagiri.github.io/Media-Library-Organiser/)
 ###### `v1.1-a1` `No-GUI`
 
 ### Update Logs
