@@ -1,5 +1,6 @@
 # Media Library Organiser
-###### `v1.1-a1` `No-GUI`  
+`v1.1-a1` `No-GUI`  
+###### 
 A program that'll automatically bulk rename and organise your **Movie and TV-Shows Library** (ideal for maintaining your *xbmc* library). Movies and TV Shows are easily organized by your xbmc if they're given the right name.
 
 #### What's New !
@@ -23,7 +24,7 @@ What things you need to run the program:
     ```bash
     pip install imdbpy
     ```
-    
+
 ## Usage
 * Step 1: Move all the media files that are to be renamed and organised into "/Input" folder.
 * Step 2: Run the appropirate .py file **RENAME-Movies.py** or **RENAME-Series.py**
