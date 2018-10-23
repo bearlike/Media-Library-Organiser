@@ -1,5 +1,5 @@
 # Media Library Organiser
-###### `v1.1-a1` `No-GUI`  
+`v1.1-a1` `No-GUI`  
 A (simple) program that'll automatically bulk rename and organise your **Movie and TV-Shows Library** (ideal for maintaining your *xbmc* library). Movies and TV Shows are easily organized by your xbmc if they're given the right name.
 
 #### What's New !
