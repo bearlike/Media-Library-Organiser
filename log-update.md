@@ -14,7 +14,7 @@
 * `[ADDITION]` **RENAME-ALL.py** to call the respective programs at ease.
 * Major Improvements in **RENAME-Series.py**
 
-#### v0.7
+#### v0.8
 * `[UPDATE]` TV Shows are now automatically organised into folders based on their Episode_Number, Season_number and TV_Series_name
 
 #### v0.7
