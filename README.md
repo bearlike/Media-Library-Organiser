@@ -2,7 +2,8 @@
 `v1.1-a1` `No-GUI`  
 ####
 A (simple) program that'll automatically bulk rename and organise your **Movie and TV-Shows Library** (ideal for maintaining your *xbmc* library). Movies and TV Shows are easily organized by your xbmc if they're given the right name.
-
+#### Why do I do it?
+This boosts my frequently updated massive media library organised almost instantly.
 #### What's New !
 * `[UPDATE]` Uses **imDB** to retrieve the most relevent movie names.
 ######
