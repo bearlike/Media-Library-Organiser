@@ -1,7 +1,19 @@
 # [Media Library Organiser](https://krishnaalagiri.github.io/Media-Library-Organiser/)
-###### `v1.1-a1` `No-GUI`
+###### `v1.2.5-a1` `No-GUI`
 
 ### Update Logs
+#### v1.2.5-a1
+* Decreased Time Complexity to find the most apt series name.
+
+#### v1.2-a1
+* `[UPDATE]` Uses **imDB** to retrieve the most relevent series names.
+* Decreased Time Complexity to find the most apt movie name.
+* Made the interface a bit more User Friendly :)
+
+#### v1.1-a1
+* Minor Bug Fixes in **RENAME-Movies.py**
+* Major Code Optimizations in **RENAME-Movies.py**
+
 #### v1.0-a1
 * Increased efficiency to find the most apt movie name.
 * Minor Bug Fixes in **RENAME-Movies.py**

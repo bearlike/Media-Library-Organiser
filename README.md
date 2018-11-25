@@ -1,11 +1,11 @@
 # Media Library Organiser
-`v1.1-a1` `No-GUI`  
+`v1.2.5-a1` `No-GUI`  
 ####
 A (simple) program that'll automatically bulk rename and organise your **Movie and TV-Shows Library** (ideal for maintaining your *xbmc* library). Movies and TV Shows are easily organized by your xbmc if they're given the right name.
 #### Why do I do it?
 This boosts my frequently updated massive media library organised almost instantly.
 #### What's New !
-* `[UPDATE]` Uses **imDB** to retrieve the most relevent movie names.
+* `[UPDATE]` Uses **imDB** to retrieve the most relevent movie and series names.
 ######
 * **To view the entire Update log** - [log-update.md](https://github.com/KrishnaAlagiri/Media-Library-Organiser/blob/master/log-update.md)
 * **To view the features that are to be added on the next version** - [current-working.md](https://github.com/KrishnaAlagiri/Media-Library-Organiser/blob/master/current-working.md)
