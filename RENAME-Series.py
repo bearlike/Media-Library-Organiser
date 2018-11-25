@@ -94,7 +94,7 @@ for file in files:
     temp = file
     extn = file[(len(file)-4) : len(file)]
 ###############################################################################
-    if (file.endswith(".mp4") or file.endswith(".mkv")):
+    if (file.endswith(".mp4") or file.endswith(".mkv") or file.endswith(".srt")):
         rest = temp.split(extn,1)[0]
         if ".1080p" in temp:
             sep = ".1080p"

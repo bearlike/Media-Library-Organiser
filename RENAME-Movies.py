@@ -127,7 +127,7 @@ for file in files:
     temp = file
     extn = file[(len(file)-4) : len(file)]
 
-    if(file.endswith(".mp4") or file.endswith(".mkv")) :
+    if(file.endswith(".mp4") or file.endswith(".mkv") or file.endswith(".srt")) :
         rest = FormatStr(temp)
         year_str =  '('+ rest[len(rest)-4 : len(rest)] +')'
         rest = rest[0:len(rest)-4]
@@ -170,5 +170,5 @@ if(i>0 or ErrorFlag==1):
 else:
     print("No Media File Found in Input Folder")
 print("Enter any key to exit...")
-print()"""
+print()
 msvcrt.getch()
