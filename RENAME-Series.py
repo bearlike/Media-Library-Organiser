@@ -5,8 +5,11 @@
 ##  your XBMC library (Like Kodi, Plex and OSMC)
 ##=============================================================================
 import os
-import msvcrt
 import re
+import msvcrt
+from imdb import IMDb
+from similarity.damerau import Damerau
+
 def Title():
     os.system('mode con: cols=90 lines=30')
     print("    _       _                  _          _  ")
@@ -26,6 +29,40 @@ def Title():
     print("           |___/                         ")
     print("")
 
+def find_most_apt(name, series):
+    damerau = Damerau()
+    deg = []
+    for ss in series:
+        if(name.upper() == ss.upper()):
+            return(ss)
+        else:
+            deg.append(damerau.distance(name.upper(), ss.upper()))
+    indd = int(deg.index(min(deg)))
+    mostapt = series[indd]
+    return(mostapt)
+
+def main_imdb(str21):
+    ia = IMDb()
+    s_result = ia.search_movie(str21)
+    series = []
+    for ss in s_result:
+        if(ss['kind'] == "tv series"):
+            str2 = ss['title']
+            series.append(str2)
+    return(series)
+
+def removeIllegal(str):
+    str=str.replace('<',"")
+    str=str.replace('>',"")
+    str=str.replace(':',"")
+    str=str.replace('"',"")
+    str=str.replace('/',"")
+    str=str.replace('\\',"")
+    str=str.replace('|',"")
+    str=str.replace('?',"")
+    str=str.replace('*',"")
+    str=str.strip()
+    return(str)
 
 def hasX(inputString):
     return bool(re.search(r'\dx\d', inputString) or re.search(r'\d x \d', inputString))
@@ -89,6 +126,7 @@ except:
 path = str(os.getcwd())+"\\Input\\Series\\"
 path_new = path_new_1 = rest = Final = "NULL"
 NAME=""
+Copy=""
 i=0
 ErrorFlag=0
 FileFlag=0
@@ -119,8 +157,10 @@ for file in files:
             sep = "WEBRip"
         elif "WEB" in temp:
             sep = "WEB"
-
-        rest = rest.split(sep,1)[0]
+        try:
+            rest = rest.split(sep,1)[0]
+        except:
+            pass
         rest = rest.replace("."," ")
     ##Specifically written for'x' type Files
         if hasX(file):
@@ -140,17 +180,26 @@ for file in files:
                     break
                 else:
                     NAME = NAME + word + " "
-            year = re.findall('([(]+[0-9]+[0-9]+[0-9]+[0-9]+[)])', NAME)
-            try:
-                NAME=NAME.replace(year[0],"")
-            except:
-                pass
+            brackets_ = re.findall('[(]+(.*?)[)]', NAME)
+            for yy in brackets_:
+                try:
+                    NAME=NAME.replace(yy,"")
+                except:
+                    pass
+            if(NAME != Copy):
+                Copy = NAME
+                series = main_imdb(NAME)
+                NAME = find_most_apt(NAME, series)
+                NAME = removeIllegal(NAME)
+                NAME=NAME.strip()
+                Restore = NAME
+            else:
+                NAME = Restore
             TEMP=Final=Final.strip()
             TEMP=TEMP.replace('S',"")
             SEASON = TEMP.split('E',1)[0]
             EPISODE = TEMP.split('E',1)[1]
             Final = Final + extn
-            NAME=NAME.strip()
             CheckFlag=1
 
     if CheckFlag==1:
