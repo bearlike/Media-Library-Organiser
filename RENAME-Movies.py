@@ -21,18 +21,6 @@ def Find(string):
     url = re.findall('www.(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\), ]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', string)
     return url
 
-def FindYear(Str):
-    yr = re.findall('([(]+[0-9]+[0-9]+[0-9]+[0-9]+[)])', Str)
-    yr = str(yr)
-    yr = yr.replace("[","")
-    yr = yr.replace("]","")
-    yr = yr.replace("'","")
-    yr = yr.replace(",","")
-    yr = yr.replace(" ","")
-    if(yr == ""):
-        yr = "(----)"
-    return(yr)
-
 def lastIndexOf(str1,toFind):
     index = len(str1)-1
     i = 0
@@ -46,26 +34,27 @@ def main_imdb(str21):
     ia = IMDb()
     s_result = ia.search_movie(str21)
     movies = []
-    str1="Movie\n=====\nTitle: "
     for movie in s_result:
-        str2 = (movie.summary())
-        str2=str2.replace(str1,"")
-        str2=str2.replace("\n","")
-        str2=str2.replace("\"","")
-        year_str=FindYear(str2)
-        str2 = str2[:lastIndexOf(str2,",")]
-        str2 = str2.split("(",1)[0]
-        str2 = str2.replace(":","")
-        str2 = str2.replace("*","")
-        str2 = str2.replace("|","")
-        str2 = str2.replace("?","")
-        str2 = str2.replace("<","")
-        str2 = str2.replace(">","")
-        str2 = str2.replace("/","")
-        str2 = str2.replace("\\","")
-        str2 = str2.strip()
-        movies.append(str2+" "+year_str)
+        if(movie['kind'] == 'movie'):
+            str2 = movie['title']
+            try:
+                year_str= movie['year']
+            except:
+                year_str= "----"
+            movies.append(str2+" ("+str(year_str)+")")
     return(movies)
+
+def removeIllegal(str):
+    str=str.replace('<',"")
+    str=str.replace('>',"")
+    str=str.replace(':',"")
+    str=str.replace('"',"")
+    str=str.replace('/',"")
+    str=str.replace('\\',"")
+    str=str.replace('|',"")
+    str=str.replace('?',"")
+    str=str.replace('*',"")
+    return(str)
 
 def Title():
     os.system('mode con: cols=75 lines=30')
@@ -85,6 +74,7 @@ def Title():
     print("  \___/|_| \__, \__,_|_||_|_/__/\___|_|  ")
     print("           |___/                         ")
     print("")
+
 
 def FormatStr(temp):
             if ".1080p" in temp:
@@ -142,6 +132,7 @@ for file in files:
         print("Derived: ",Final)
         movies = main_imdb(rest + year_str)
         rest = find_most_apt(Final, movies)
+        rest = removeIllegal(Final)
         Final = rest + extn
         print("Most Apt: ",Final)
         print()
