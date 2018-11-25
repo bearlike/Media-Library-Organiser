@@ -82,7 +82,11 @@ try:
     os.mkdir(str(os.getcwd())+"\Input")
 except:
     pass
-path = str(os.getcwd())+"\Input"
+try:
+    os.mkdir(str(os.getcwd())+"\\Input\\Series")
+except:
+    pass
+path = str(os.getcwd())+"\\Input\\Series\\"
 path_new = path_new_1 = rest = Final = "NULL"
 NAME=""
 i=0
@@ -145,8 +149,8 @@ for file in files:
             CheckFlag=1
 
     if CheckFlag==1:
-        path_new = os.getcwd() + "\Output\\" + NAME
-        path_new_1 = os.getcwd() + "\Output\\" + NAME +"\\Season "+ str(int(SEASON))
+        path_new = os.getcwd() + "\\Output\\Series\\" + NAME
+        path_new_1 = os.getcwd() + "\\Output\\Series\\" + NAME +"\\Season "+ str(int(SEASON))
 
         ###############################################################################
     """
@@ -167,7 +171,11 @@ for file in files:
     ###"""
     if CheckFlag==1:
         try:
-            os.mkdir(str(os.getcwd())+"\Output")
+            os.mkdir(str(os.getcwd())+"\\Output")
+        except FileExistsError:
+            pass
+        try:
+            os.mkdir(str(os.getcwd())+"\\Output\\Series")
         except FileExistsError:
             pass
         try:
