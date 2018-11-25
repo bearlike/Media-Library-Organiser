@@ -115,10 +115,17 @@ os.system("cls")
 Title()
 try:
     os.mkdir("Input")
+except FileExistsError:
+    pass
+try:
+    os.mkdir("Input\\Movies")
+except FileExistsError:
+    pass
+try:
     os.mkdir("Output")
 except FileExistsError:
     pass
-path = 'Input'
+path = "Input\\Movies"
 i=0
 ErrorFlag=0
 FileFlag=0
@@ -141,9 +148,13 @@ for file in files:
 
 ###############################################################################
 ##RENAME HAPPENS HERE
-        path_new = os.getcwd() + "\Output\\" + rest
+        path_new = os.getcwd() + "\\Output\\Movies\\" + rest
         try:
             os.mkdir("Output")
+        except FileExistsError:
+            pass
+        try:
+            os.mkdir("Output\\Movies")
         except FileExistsError:
             pass
         try:
