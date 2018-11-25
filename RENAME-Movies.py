@@ -57,6 +57,7 @@ def removeIllegal(str):
     return(str)
 
 def Title():
+    os.system("cls")
     os.system('mode con: cols=75 lines=30')
     print("    _       _                  _          _  ")
     print("   /_\ _  _| |_ ___ _ __  __ _| |_ ___ __| | ")
@@ -77,31 +78,28 @@ def Title():
 
 
 def FormatStr(temp):
-            if ".1080p" in temp:
-                sep = ".1080p"
-            elif ".720p" in temp:
-                sep = ".720p"
-            elif "[" in temp:
-                sep = "["
-            elif "1080p" in temp:
-                sep = "1080p"
-            elif "720p" in temp:
-                sep = "720p"
-            if "TamilRockers" in temp:
-                temp = temp.split(' - ',1)[1]
-            try:
-                rest = temp.split(sep,1)[0]
-            except:
-                pass
-            rest = rest.replace("."," ")
-            rest = rest.replace("(","")
-            rest = rest.replace(")","")
-            return(rest)
-
-
+    if ".1080p" in temp:
+        sep = ".1080p"
+    elif ".720p" in temp:
+        sep = ".720p"
+    elif "[" in temp:
+        sep = "["
+    elif "1080p" in temp:
+        sep = "1080p"
+    elif "720p" in temp:
+        sep = "720p"
+    if "TamilRockers" in temp:
+        temp = temp.split(' - ',1)[1]
+    try:
+        rest = temp.split(sep,1)[0]
+    except:
+        pass
+    rest = rest.replace("."," ")
+    rest = rest.replace("(","")
+    rest = rest.replace(")","")
+    return(rest)
 
 #Driver Code
-os.system("cls")
 Title()
 try:
     os.mkdir("Input")
@@ -125,6 +123,8 @@ for file in files:
     extn = file[(len(file)-4) : len(file)]
 
     if(file.endswith(".mp4") or file.endswith(".mkv") or file.endswith(".srt")) :
+        Title()
+        print(str(i)+" File(s) Processed....")
         rest = FormatStr(temp)
         year_str =  '('+ rest[len(rest)-4 : len(rest)] +')'
         rest = rest[0:len(rest)-4]
@@ -163,7 +163,8 @@ for file in files:
 
 ###############################################################################
 ##RESULT GENERATION
-print (" ")
+Title()
+print ("All Files Processed...")
 if(FileFlag==1):
     print("Solution: Try again after removing the above file(s) from Output folder")
 if(i>0 or ErrorFlag==1):

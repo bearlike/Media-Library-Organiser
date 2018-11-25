@@ -11,6 +11,7 @@ from imdb import IMDb
 from similarity.damerau import Damerau
 
 def Title():
+    os.system("cls")
     os.system('mode con: cols=90 lines=30')
     print("    _       _                  _          _  ")
     print("   /_\ _  _| |_ ___ _ __  __ _| |_ ___ __| | ")
@@ -113,7 +114,6 @@ def split_line(text):
     return words
 ###############################################################################
 ##MAIN
-os.system("cls")
 Title()
 try:
     os.mkdir(str(os.getcwd())+"\Input")
@@ -131,12 +131,15 @@ i=0
 ErrorFlag=0
 FileFlag=0
 files = os.listdir(path)
+print("Reading Files....")
 for file in files:
     CheckFlag=0
     temp = file
     extn = file[(len(file)-4) : len(file)]
 ###############################################################################
     if (file.endswith(".mp4") or file.endswith(".mkv") or file.endswith(".srt")):
+        Title()
+        print(str(i)+" File(s) Processed....")
         rest = temp.split(extn,1)[0]
         if ".1080p" in temp:
             sep = ".1080p"
@@ -206,7 +209,7 @@ for file in files:
         path_new = os.getcwd() + "\\Output\\Series\\" + NAME
         path_new_1 = os.getcwd() + "\\Output\\Series\\" + NAME +"\\Season "+ str(int(SEASON))
 
-        ###############################################################################
+###############################################################################
     def TEST():
         ##   TESTING
         ## =============
@@ -250,7 +253,8 @@ for file in files:
 
 ###############################################################################
 ##RESULT GENERATION
-print (" ")
+Title()
+print ("All Files Processed...")
 if(FileFlag==1):
     print("Solution: Try again after removing the above file(s) from Output folder")
 if(i>0 or ErrorFlag==1):
