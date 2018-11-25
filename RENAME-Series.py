@@ -140,12 +140,17 @@ for file in files:
                     break
                 else:
                     NAME = NAME + word + " "
-            NAME=NAME.strip()
+            year = re.findall('([(]+[0-9]+[0-9]+[0-9]+[0-9]+[)])', NAME)
+            try:
+                NAME=NAME.replace(year[0],"")
+            except:
+                pass
             TEMP=Final=Final.strip()
             TEMP=TEMP.replace('S',"")
             SEASON = TEMP.split('E',1)[0]
             EPISODE = TEMP.split('E',1)[1]
             Final = Final + extn
+            NAME=NAME.strip()
             CheckFlag=1
 
     if CheckFlag==1:
@@ -153,22 +158,20 @@ for file in files:
         path_new_1 = os.getcwd() + "\\Output\\Series\\" + NAME +"\\Season "+ str(int(SEASON))
 
         ###############################################################################
-    """
-    ##   TESTING
-    ## =============
-    print (" ")
-    print (" ")
-    print("NAME: " + NAME)
-    print("SEASON: " + SEASON)
-    print("EPISODE: " + EPISODE)
-    print("EXTN: " + extn)
-    ##print("TEMP: " + temp)
-    print("REST: " + rest)
-    print("Final: " + Final)
-    print("PATH: "+ path_new)
-    print (" ")
-    print (" ")
-    ###"""
+    def TEST():
+        ##   TESTING
+        ## =============
+        print ("\n\n")
+        print("NAME: " + NAME)
+        print("SEASON: " + SEASON)
+        print("EPISODE: " + EPISODE)
+        print("EXTN: " + extn)
+        ##print("TEMP: " + temp)
+        print("REST: " + rest)
+        print("Final: " + Final)
+        print("PATH: "+ path_new)
+        print ("\n\n")
+    #TEST()
     if CheckFlag==1:
         try:
             os.mkdir(str(os.getcwd())+"\\Output")
@@ -193,6 +196,7 @@ for file in files:
             FileFlag=1
             ErrorFlag=1
             i=i-1;
+
         i=i+1
 
 ###############################################################################
