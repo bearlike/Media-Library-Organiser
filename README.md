@@ -14,7 +14,7 @@ This boosts my frequently updated massive media library organised almost instant
 ## Getting Started
 ### Prerequisites
 What things you need to run the program:
-- Python Compiler (3.7 Recommmended)
+- Python Compiler (3.7 Recommended)
 - Install the following Packages from pypi by using the following commands:
   - **strsim**
     ```bash
@@ -31,7 +31,7 @@ What things you need to run the program:
 <Movie_name> (<year>)
 ```
 
-- Offline TV_Series files are renamed and organized in format:
+- Offline TV_Series files are renamed and organized in the format:
 ```
 <TV_Series_name>
 ```
