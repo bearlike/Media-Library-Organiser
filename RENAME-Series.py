@@ -11,8 +11,8 @@ from imdb import IMDb
 from similarity.damerau import Damerau
 
 def Title():
-    os.system("cls")
-    os.system('mode con: cols=90 lines=30')
+    #os.system('mode con: cols=90 lines=30')
+    #os.system("cls")
     print("    _       _                  _          _  ")
     print("   /_\ _  _| |_ ___ _ __  __ _| |_ ___ __| | ")
     print("  / _ \ || |  _/ _ \ '  \/ _` |  _/ -_) _` | ")
@@ -69,7 +69,10 @@ def hasX(inputString):
     return bool(re.search(r'\dx\d', inputString) or re.search(r'\d x \d', inputString))
 
 def hasSE(inputString):
-    return bool(re.search(r'S\d\dE\d\d', inputString) or re.search(r'S\dE\d\d', inputString))
+    return bool(re.search(r'S\d\dE\d\d', inputString) or re.search(r'S\dE\d\d', inputString) or re.search(r's\d\de\d\d', inputString) or re.search(r's\de\d\d', inputString))
+
+def hasSEP(inputString):
+    return bool(re.search(r'S\d\dEP\d\d', inputString) or re.search(r'S\dEP\d\d', inputString) or re.search(r's\d\dep\d\d', inputString) or re.search(r's\dep\d\d', inputString))
 
 def FindName(inputString):
     inputString = inputString.replace(' x ', 'x', 1)
@@ -141,29 +144,15 @@ for file in files:
         Title()
         print(str(i)+" File(s) Processed....")
         rest = temp.split(extn,1)[0]
-        if ".1080p" in temp:
-            sep = ".1080p"
-        elif ".720p" in temp:
-            sep = ".720p"
-        ##SAFE CASES
-        elif "HDTV" in temp:
-            sep ="HDTV"
-        elif "x264" in temp:
-            sep = "x264"
-        elif "AAC" in temp:
-            sep = "AAC"
-        elif "E-Subs" in temp:
-            sep = "E-Subs"
-        elif "ESubs" in temp:
-            sep = "ESubs"
-        elif "WEBRip" in temp:
-            sep = "WEBRip"
-        elif "WEB" in temp:
-            sep = "WEB"
-        try:
-            rest = rest.split(sep,1)[0]
-        except:
-            pass
+        rest = rest.replace(".1080p","")
+        rest = rest.replace(".720p","")
+        rest = rest.replace("HDTV","")
+        rest = rest.replace("x264","")
+        rest = rest.replace("AAC","")
+        rest = rest.replace("E-Subs","")
+        rest = rest.replace("ESubs","")
+        rest = rest.replace("WEBRip","")
+        rest = rest.replace("WEB","")
         rest = rest.replace("."," ")
     ##Specifically written for'x' type Files
         if hasX(file):
@@ -179,6 +168,9 @@ for file in files:
             words = split_line(rest)
             for word in words:
                 if(hasSE(word)):
+                    Final = word
+                    break
+                if(hasSEP(word)):
                     Final = word
                     break
                 else:
