@@ -78,6 +78,7 @@ def Title():
 
 
 def FormatStr(temp):
+    rest = temp
     if ".1080p" in temp:
         sep = ".1080p"
     elif ".720p" in temp:
