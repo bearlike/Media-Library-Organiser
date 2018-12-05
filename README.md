@@ -1,7 +1,7 @@
 # Media Library Organiser
 [![Language](https://img.shields.io/badge/language-python-blue.svg?style=flat)](https://www.python.org)
-![Release](https://img.shields.io/badge/release-v1.2.5--a1-orange.svg?style=flat)
-![No-GUI](https://img.shields.io/badge/No--GUI-yellowgreen.svg)
+[![Release](https://img.shields.io/badge/release-v1.3.0--a1-orange.svg?style=flat)](https://github.com/KrishnaAlagiri/Media-Library-Organiser/releases/tag/v1.3-a1)
+[![No-GUI](https://img.shields.io/badge/No--GUI-yellowgreen.svg)](#media-library-organiser)
 
 ## About
 A (simple) program that'll automatically bulk rename and organise your **Movie and TV-Shows Library** (ideal for maintaining your *xbmc* library). Movies and TV Shows are easily organized by your xbmc if they're given the right name.
