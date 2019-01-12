@@ -11,8 +11,8 @@ from imdb import IMDb
 from similarity.damerau import Damerau
 
 def Title():
-    #os.system('mode con: cols=90 lines=30')
-    #os.system("cls")
+    os.system('mode con: cols=90 lines=30')
+    os.system("cls")
     print("    _       _                  _          _  ")
     print("   /_\ _  _| |_ ___ _ __  __ _| |_ ___ __| | ")
     print("  / _ \ || |  _/ _ \ '  \/ _` |  _/ -_) _` | ")
