@@ -2,7 +2,7 @@
 [![Language](https://img.shields.io/badge/language-python-blue.svg?style=flat)](https://www.python.org)
 [![Release](https://img.shields.io/badge/release-v1.3.0--a1-orange.svg?style=flat)](https://github.com/KrishnaAlagiri/Media-Library-Organiser/releases/tag/v1.3-a1)
 [![No-GUI](https://img.shields.io/badge/No--GUI-yellowgreen.svg)](#media-library-organiser)
-[![License](https://img.shields.io/apm/l/:packageName.svg)](https://github.com/KrishnaAlagiri/Media-Library-Organiser/blob/master/LICENSE.md)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/KrishnaAlagiri/Media-Library-Organiser/blob/master/LICENSE.md)
 
 
 ## About
