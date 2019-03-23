@@ -1,3 +1,9 @@
+##=============================================================================
+##  Code Written by ~KK~
+##  To Automate the boring process of renaming files for your TV Shows library
+##  Useful for organising bulk media files or frequent updation of
+##  your XBMC library (Like Kodi, Plex and OSMC)
+##=============================================================================
 import os
 from bs4 import BeautifulSoup
 import googlesearch as gs
