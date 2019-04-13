@@ -39,9 +39,9 @@ while(1==1):
     print("Enter you Choice: ",end='')
     ch=int(input())
     if ch==1:
-        os.system("RENAME-Movies.py")
+        os.system("py RENAME-Movies.py")
     elif ch==2:
-        os.system("RENAME-Series.py")
+        os.system("py RENAME-Series.py")
     elif ch==3:
         print("Press any key to exit... ")
         msvcrt.getch()
