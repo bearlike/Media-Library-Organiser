@@ -29,38 +29,17 @@ What things you need to run the program:
     pip install strsim
     pip install imdbpy
     ```
-
-### Features
--  Offline Movie files are renamed and organized in format:
-```
-<Movie_name> (<year>)
-```
-
-- Offline TV_Series files are renamed and organized in the format:
-```
-<TV_Series_name>
-```
-
-- All episodes of series are renamed in the format:
-```
-S<Season_number>E<Episode_Number>
-```
-
-- All episodes of a series are moved inside a folder with their corresponding Season number in it:
-```
-//<TV_Series_name>//S<Season_number>//
-```
-
-### Usage
-* Step 1: Move all the media files that are to be renamed and organised into "/Input/Movies" or "/Input/Series" folder according to the requirement.
+  
+## Usage
+* Step 1: Move all the media files that are to be renamed and organised into "/Input" folder.
 * Step 2: Run the appropirate .py file **RENAME-Movies.py** or **RENAME-Series.py**
-* Step 3: If no error occurs, the organized files would be inside "/Output/Movies" or "/Output/Series" folder accordingly.
+* Step 3: If no error occurs, the organized files would be inside "/Output" folder    
+
 ### Screenshot
 #### RENAME-Movies.py
-<img src="https://github.com/KrishnaAlagiri/Media-Library-Organiser/raw/master/Screenshots/Movies%20-%20Before%20and%20After.PNG" width="500"/>
-
+![Screenshots_Movies](https://github.com/KrishnaAlagiri/Media-Library-Organiser/raw/master/Screenshots/Movies%20-%20Before%20and%20After.PNG)
 #### RENAME-Series.py
-<img src="https://github.com/KrishnaAlagiri/Media-Library-Organiser/raw/master/Screenshots/TV%20Shows%20-%20Before%20and%20After.PNG" width="500"/>
+![Screenshots_TVShows](https://github.com/KrishnaAlagiri/Media-Library-Organiser/raw/master/Screenshots/TV%20Shows%20-%20Before%20and%20After.PNG)
 
 ## Authors
 * **Krishna Alagiri** - *Initial work* - [KrishnaAlagiri](https://github.com/KrishnaAlagiri/)
@@ -68,3 +47,4 @@ S<Season_number>E<Episode_Number>
 ## Acknowledgments
 * Hat tip to anyone whose code was used.
 * Myself :P
+
