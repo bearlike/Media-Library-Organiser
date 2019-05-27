@@ -20,11 +20,13 @@ def find_most_apt(name, movies):
             deg.append(damerau.distance(name.upper(), movie.upper()))
     indd = int(deg.index(min(deg)))
     mostapt = movies[indd]
+    if (mostapt == ""):
+        mostapt = name
     return(mostapt)
 
 def Find(string):
-    url = re.findall('www.(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\), ]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', string)
-    return url
+    url = re.findall('www.(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\)]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', string)
+    return (url[0])
 
 def lastIndexOf(str1,toFind):
     index = len(str1)-1
@@ -101,9 +103,10 @@ def FormatStr(temp):
     except:
         pass
     rest = rest.replace("."," ")
+    rest = rest.replace("-"," ")
     rest = rest.replace("(","")
     rest = rest.replace(")","")
-    return(rest)
+    return(rest.strip())
 
 #Driver Code
 Title()
@@ -131,13 +134,16 @@ for file in files:
     if(file.endswith(".mp4") or file.endswith(".mkv") or file.endswith(".srt")) :
         Title()
         print(str(i)+" File(s) Processed....")
-        rest = FormatStr(temp)
+        url = Find(temp)
+        # print(url)
+        temp = temp.replace(url,"")
+        rest = FormatStr(temp.strip())
         year_str =  '('+ rest[len(rest)-4 : len(rest)] +')'
         rest = rest[0:len(rest)-4]
         Final = rest + year_str
         print("Derived: ",Final)
         movies = main_imdb(rest + year_str)
-        rest = find_most_apt(Final, movies)
+        rest = find_most_apt(Final, movies) # Sometimes causes error
         rest = removeIllegal(Final)
         Final = rest + extn
         print("Most Apt: ",Final)
@@ -158,6 +164,7 @@ for file in files:
             os.mkdir(path_new)
         except FileExistsError:
             pass
+
         try:
             os.rename(os.path.join(path, file), os.path.join(path_new, Final ))
         except:
@@ -165,10 +172,14 @@ for file in files:
             FileFlag=1
             ErrorFlag=1
             i=i-1;
+        
+        # print(file)
         i=i+1
 
 ###############################################################################
+
 ##RESULT GENERATION
+
 Title()
 print ("All Files Processed...")
 if(FileFlag==1):
