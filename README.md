@@ -7,19 +7,21 @@
 
 ## About
 A (simple) program that'll automatically bulk rename and organise your **Movie and TV-Shows Library** (ideal for maintaining your *xbmc* library). Movies and TV Shows are easily organized by your xbmc if they're given the right name.
+
 #### Why do I do it?
 This boosts my frequently updated massive media library organised almost instantly.
+
+
 #### What's New !
-* `[ADDED]` Fallback mode if unable to detect a TV Show.
-* `[ADDED]` Automatic Subtitle Downloader.
-* `[UPDATE]` Uses **imDB** to retrieve the most relevent movie and series names.
-
-
-* **To view the entire Update log** - [log-update.md](https://github.com/KrishnaAlagiri/Media-Library-Organiser/blob/master/log-update.md)
-* **To view the features that are to be added on the next version** - [current-working.md](https://github.com/KrishnaAlagiri/Media-Library-Organiser/blob/master/current-working.md)
+- `[ADDED]` Fallback mode if unable to detect a TV Show.
+- `[ADDED]` Automatic Subtitle Downloader.
+- `[UPDATE]` Uses **imDB** to retrieve the most relevent movie and series names.
+- **To view the entire Update log** - [log-update.md](https://github.com/KrishnaAlagiri/Media-Library-Organiser/blob/master/log-update.md)
+- **To view the features that are to be added on the next version** - [current-working.md](https://github.com/KrishnaAlagiri/Media-Library-Organiser/blob/master/current-working.md)
 
 
 ## Getting Started
+
 ### Prerequisites
 What things you need to run the program:
 - Python Compiler (3.7 Recommended)
@@ -55,7 +57,9 @@ S<Season_number>E<Episode_Number>
 * Step 1: Move all the media files that are to be renamed and organised into "/Input/Movies" or "/Input/Series" folder according to the requirement.
 * Step 2: Run the appropirate .py file **RENAME-Movies.py** or **RENAME-Series.py**
 * Step 3: If no error occurs, the organized files would be inside "/Output/Movies" or "/Output/Series" folder accordingly.
+
 ### Screenshot
+
 #### RENAME-Movies.py
 <img src="https://github.com/KrishnaAlagiri/Media-Library-Organiser/raw/master/Screenshots/Movies%20-%20Before%20and%20After.PNG" width="500"/>
 
