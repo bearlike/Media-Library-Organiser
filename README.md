@@ -84,4 +84,4 @@ S<Season_number>E<Episode_Number>
   Made with ❤️ by <a href="https://github.com/KrishnaAlagiri">Krishna Alagiri</a>
 </p>
 
-![Olivia's wave](http://cdn.thekrishna.in/img/common/border.png)
+![wave](http://cdn.thekrishna.in/img/common/border.png)
