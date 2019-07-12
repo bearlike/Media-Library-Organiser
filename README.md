@@ -1,12 +1,18 @@
-# Media Library Organiser
-[![Language](https://img.shields.io/badge/language-python-blue.svg?style=flat)](https://www.python.org)
-[![Release](https://img.shields.io/badge/release-v1.3.0--a1-orange.svg?style=flat)](https://github.com/KrishnaAlagiri/Media-Library-Organiser/releases/tag/v1.3-a1)
-[![No-GUI](https://img.shields.io/badge/No--GUI-yellowgreen.svg)](#media-library-organiser)
-[![Last_Commit](https://img.shields.io/github/last-commit/KrishnaAlagiri/Media-Library-Organiser.svg)](https://github.com/KrishnaAlagiri/Potential-Waffle/commits/master)
-[![License](https://img.shields.io/github/license/KrishnaAlagiri/Media-Library-Organiser.svg?color=blue)](/LICENSE)
+<h1 align="center">
+  <br>
+  <img src="http://cdn.thekrishna.in/img/common/mlo.png" alt="Media Library Organiser" width="500">
+  <br>
+</h1>
 
-## About
-A (simple) program that'll automatically bulk rename and organise your **Movie and TV-Shows Library** (ideal for maintaining your *xbmc* library). Movies and TV Shows are easily organized by your xbmc if they're given the right name.
+<h4 align="center">Automatically bulk renames and organises your Movie and TV-Shows Library.<br>Ideal for maintaining your xbmc library.</h4>
+
+<p align="center">
+  <a href="https://www.python.org"><img src="https://img.shields.io/badge/language-python-blue.svg?style=flat"></a>
+  <a href="https://github.com/KrishnaAlagiri/Media-Library-Organiser/releases/tag/v1.3-a1"><img src="https://img.shields.io/badge/release-v1.3.0--a1-orange.svg?style=flat"></a>
+  <a href="#"><img src="https://img.shields.io/github/last-commit/KrishnaAlagiri/Media-Library-Organiser.svg"></a>
+  <a href="/LICENSE"><img src="https://img.shields.io/github/license/KrishnaAlagiri/Media-Library-Organiser.svg?color=blue"></a>
+</p>
+
 
 #### Why do I do it?
 This boosts my frequently updated massive media library organised almost instantly.
@@ -72,3 +78,10 @@ S<Season_number>E<Episode_Number>
 ## Acknowledgments
 * Hat tip to anyone whose code was used.
 * Myself :P
+
+
+<p align="center">
+  Made with ❤️ by <a href="https://github.com/KrishnaAlagiri">Krishna Alagiri</a>
+</p>
+
+![Olivia's wave](http://cdn.thekrishna.in/img/common/border.png)
