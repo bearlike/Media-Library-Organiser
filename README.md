@@ -10,7 +10,7 @@
   <a href="https://www.python.org"><img src="https://img.shields.io/badge/language-python-blue.svg?style=flat"></a>
   <a href="https://github.com/KrishnaAlagiri/Media-Library-Organiser/releases/tag/v1.3-a1"><img src="https://img.shields.io/badge/release-v1.3.0--a1-orange.svg?style=flat"></a>
   <a href="#"><img src="https://img.shields.io/github/last-commit/KrishnaAlagiri/Media-Library-Organiser.svg"></a>
-  <a href="/LICENSE"><img src="https://img.shields.io/github/license/KrishnaAlagiri/Media-Library-Organiser.svg?color=blue"></a>
+  <a href="/LICENSE.md"><img src="https://img.shields.io/github/license/KrishnaAlagiri/Media-Library-Organiser.svg?color=blue"></a>
 </p>
 
 
