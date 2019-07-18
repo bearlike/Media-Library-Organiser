@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="http://cdn.thekrishna.in/img/common/mlo.png" alt="Media Library Organiser" width="500">
+  <img src="http://cdn.thekrishna.in/img/common/mlo.png" alt="Media Library Organiser" width="650">
   <br>
 </h1>
 
@@ -14,11 +14,11 @@
 </p>
 
 
-#### Why do I do it?
+### Why do I do it?
 This boosts my frequently updated massive media library organised almost instantly.
 
 
-#### What's New !
+### What's New !
 - `[ADDED]` Fallback mode if unable to detect a TV Show.
 - `[ADDED]` Automatic Subtitle Downloader.
 - `[UPDATE]` Uses **imDB** to retrieve the most relevent movie and series names.
@@ -44,19 +44,20 @@ What things you need to run the program:
 <Movie_name> (<year>)
 ```
 
-- Offline TV_Series files are renamed and organized in the format:
-```
-<TV_Series_name>
-```
-
 - All episodes of series are renamed in the format:
 ```
 S<Season_number>E<Episode_Number>
 ```
 
+- Allmovies are moved inside a folder with their corresponding name and release year in it:
+```
+*/Output/Movies/<Movie_name> (<year>)/
+```
+
+
 - All episodes of a series are moved inside a folder with their corresponding Season number in it:
 ```
-//<TV_Series_name>//S<Season_number>//
+*/Output/Series/<TV_Series_name>/S<Season_number>/
 ```
 
 ### Usage
@@ -73,7 +74,7 @@ S<Season_number>E<Episode_Number>
 <img src="https://github.com/KrishnaAlagiri/Media-Library-Organiser/raw/master/Screenshots/TV%20Shows%20-%20Before%20and%20After.PNG" width="500"/>
 
 ## Authors
-* **Krishna Alagiri** - *Initial work* - [KrishnaAlagiri](https://github.com/KrishnaAlagiri/)
+* **Krishna Alagiri** - [KrishnaAlagiri](https://github.com/KrishnaAlagiri/)
 
 ## Acknowledgments
 * Hat tip to anyone whose code was used.
