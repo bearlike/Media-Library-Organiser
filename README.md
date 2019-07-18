@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="http://cdn.thekrishna.in/img/common/mlo.png" alt="Media Library Organiser" width="800">
+  <img src="http://cdn.thekrishna.in/img/common/mlo.png" alt="Media Library Organiser" width="500">
   <br>
 </h1>
 
