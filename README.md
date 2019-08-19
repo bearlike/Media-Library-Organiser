@@ -74,7 +74,7 @@ S<Season_number>E<Episode_Number>
 <img src="https://github.com/KrishnaAlagiri/Media-Library-Organiser/raw/master/Screenshots/TV%20Shows%20-%20Before%20and%20After.PNG" width="500"/>
 
 ## Authors
-* **Krishna Alagiri** - [KrishnaAlagiri](https://github.com/KrishnaAlagiri/)
+* **Krishna Alagiri** - [K-Kraken](https://github.com/K-Kraken/)
 
 ## Acknowledgments
 * Hat tip to anyone whose code was used.
