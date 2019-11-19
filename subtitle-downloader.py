@@ -1,47 +1,47 @@
-##=============================================================================
-##  Code Written by ~KK~
-##  To Automate the boring process of renaming files for your TV Shows library
-##  Useful for organising bulk media files or frequent updation of
-##  your XBMC library (Like Kodi, Plex and OSMC)
-##=============================================================================
-import os
-from bs4 import BeautifulSoup
-import googlesearch as gs
-import requests
-LANGUAGE_CODES = {
-    "Arabic": "ar",
-    "Chinese": "zh",
-    "Danish": "da",
-    "Dutch": "nl",
-    "English": "en",
-    "Esperanto": "eo",
-    "Finnish": "fi",
-    "French": "fr",
-    "German": "de",
-    "Greek": "el",
-    "Hebrew": "he",
-    "Hindi": "hi",
-    "Irish": "ga",
-    "Italian": "it",
-    "Japanese": "ja",
-    "Korean": "ko",
-    "Mongolian": "mn",
-    "Norwegian": "no",
-    "Persian": "fa",
-    "Polish": "pl",
-    "Portuguese": "pt",
-    "Russian": "ru",
-    "Spanish": "es",
-    "Swedish": "sv",
-    "Thai": "th",
-    "Urdu": "ur",
-    "Vietnamese": "vi",
-    "Welsh": "cy",
-    "Yiddish": "yi",
-    "Zulu": "zu"
-}
+"""  Code Written by ~KK~
+  To Automate the boring process of renaming files for your TV Shows library
+  Useful for organising bulk media files or frequent updation of
+  your XBMC library (Like Kodi, Plex and OSMC)
+"""
 
 def downloadsub(keyword,location,chance):
+    import os
+    from bs4 import BeautifulSoup
+    import googlesearch as gs
+    import requests
+    LANGUAGE_CODES = {
+        "Arabic": "ar",
+        "Chinese": "zh",
+        "Danish": "da",
+        "Dutch": "nl",
+        "English": "en",
+        "Esperanto": "eo",
+        "Finnish": "fi",
+        "French": "fr",
+        "German": "de",
+        "Greek": "el",
+        "Hebrew": "he",
+        "Hindi": "hi",
+        "Irish": "ga",
+        "Italian": "it",
+        "Japanese": "ja",
+        "Korean": "ko",
+        "Mongolian": "mn",
+        "Norwegian": "no",
+        "Persian": "fa",
+        "Polish": "pl",
+        "Portuguese": "pt",
+        "Russian": "ru",
+        "Spanish": "es",
+        "Swedish": "sv",
+        "Thai": "th",
+        "Urdu": "ur",
+        "Vietnamese": "vi",
+        "Welsh": "cy",
+        "Yiddish": "yi",
+        "Zulu": "zu"
+    }
+
     q = keyword
     temp = q
     x = location
@@ -106,7 +106,7 @@ def downloadsub(keyword,location,chance):
             tdisp = "Downloading from URL - " + urll + " "
             print(tdisp)
             r = requests.get(urll, allow_redirects=True)
-            location = x + "/" + temp + ".zip"
+            location = x + "\\" + temp + ".zip"
             tdisp = "Placing at location - " + location + "\n\n"
             print(tdisp)
             open(location, 'wb').write(r.content)
@@ -121,8 +121,23 @@ def downloadsub(keyword,location,chance):
                 print(tdisp)
                 q = temp[:nnn]
                 downloadsub(q,x,chance)
-            return
+            return(str(location))
+
+def unZip(path_to_zip_file,directory_to_extract_to):
+    import zipfile
+    zip_ref = zipfile.ZipFile(path_to_zip_file, 'r')
+    zip_ref.extractall(directory_to_extract_to)
+    zip_ref.close()
 
 if __name__ == '__main__':
-    path_ = "C:\\Users\\Krishna_Alagiri\\Downloads\\"
-    downloadsub("Avengers Infinity War",path_,5)
+    import os
+    try:os.mkdir(".cache")
+    except:pass
+    path_ = os.getcwd()+"\\.cache"
+    files = os.listdir(path_)
+    for file in files:
+        if (file.endswith(".mp4") or file.endswith(".mkv")):
+            downloadsub(file[:-4],path_,5)
+        elif (file.endswith(".zip")):
+            unZip(file,path_)
+            os.remove(file)
