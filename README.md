@@ -82,7 +82,7 @@ S<Season_number>E<Episode_Number>
 
 
 <p align="center">
-  Made with ❤️ by <a href="https://github.com/K-Kraken">K-Kraken</a>
+  Made with ❤️ by <a href="https://github.com/bearlike">bearlike</a>
 </p>
 
 ![wave](http://cdn.thekrishna.in/img/common/border.png)
