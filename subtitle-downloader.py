@@ -1,10 +1,14 @@
-"""  Code Written by ~KK~
-  To Automate the boring process of renaming files for your TV Shows library
-  Useful for organising bulk media files or frequent updation of
-  your XBMC library (Like Kodi, Plex and OSMC)
-"""
+# =============================================================================
+# Code Written by ~KK~
+# To Automate the boring process of renaming files for your movie library
+# Useful for organising bulk media files or frequent updation of
+# your XBMC library (Like Kodi, Plex and OSMC)
+# =============================================================================
+import os
+import zipfile
 
-def downloadsub(keyword,location,chance):
+
+def downloadsub(keyword, location, chance):
     import os
     from bs4 import BeautifulSoup
     import googlesearch as gs
@@ -42,10 +46,9 @@ def downloadsub(keyword,location,chance):
         "Zulu": "zu"
     }
 
-    q = keyword
-    temp = q
+    q = temp = keyword
     x = location
-    q = q + " English Subtitle SubScene"
+    q += " English Subtitle SubScene"
     tdisp = "Googling - "+q+" "
     print(tdisp)
     possible = []
@@ -63,9 +66,10 @@ def downloadsub(keyword,location,chance):
         for i in p:
             if i == '/':
                 c += 1
-                if c==5:
+                if c == 5:
                     eng = "english/"
-                    print("Being Checked - ",p[(ind_count+1):(ind_count+9)]," ")
+                    print("Being Checked - ",
+                          p[(ind_count+1):(ind_count+9)], " ")
                     if(p[(ind_count+1):(ind_count+9)] == eng):
                         eng_flag = 1
             ind_count += 1
@@ -113,31 +117,32 @@ def downloadsub(keyword,location,chance):
         else:
             tdisp = "Couldn't find movie from this filename - " + temp + "\n\n"
             print(tdisp)
-            nnn=len(temp)
-            nnn=(3*nnn)/4
+            nnn = len(temp)
+            nnn = (3*nnn)/4
             nnn = int(nnn)
-            if nnn>=int(chance/2):
+            if nnn >= int(chance/2):
                 tdisp = "Retrying...(With 75% of file name)\n"
                 print(tdisp)
                 q = temp[:nnn]
-                downloadsub(q,x,chance)
+                downloadsub(q, x, chance)
             return(str(location))
 
-def unZip(path_to_zip_file,directory_to_extract_to):
-    import zipfile
+
+def unZip(path_to_zip_file, directory_to_extract_to):
     zip_ref = zipfile.ZipFile(path_to_zip_file, 'r')
     zip_ref.extractall(directory_to_extract_to)
     zip_ref.close()
 
+
 if __name__ == '__main__':
-    import os
-    try:os.mkdir(".cache")
-    except:pass
+    if not os.path.exists("./.cache"):
+        os.mkdir("./.cache")
     path_ = os.getcwd()+"\\.cache"
-    files = os.listdir(path_)
+    files = [file for file in os.listdir(
+        path_) if file[-4:] in ['.mp4', '.mkv']]
+    zip_files = [file for file in os.listdir(path_) if file[-4:] == '.zip']
     for file in files:
-        if (file.endswith(".mp4") or file.endswith(".mkv")):
-            downloadsub(file[:-4],path_,5)
-        elif (file.endswith(".zip")):
-            unZip(file,path_)
-            os.remove(file)
+        downloadsub(file[:-4], path_, 5)
+    for zip_file in zip_files:
+        unZip(zip_file, path_)
+        os.remove(zip_file)

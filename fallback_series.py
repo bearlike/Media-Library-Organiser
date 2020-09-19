@@ -1,16 +1,21 @@
 #!/usr/bin/env python3
-##=============================================================================
-##  Code Written by ~KK~
-##  Runs Both RENAME-MOVIES and RENAME-SERIES
-##  Useful for organising bulk media files or frequent updation of
-##  your XBMC library (Like Kodi, Plex and OSMC)
-##=============================================================================
+# =============================================================================
+# Code Written by ~KK~
+# Runs Both RENAME-MOVIES and RENAME-SERIES
+# Useful for organising bulk media files or frequent updation of
+# your XBMC library (Like Kodi, Plex and OSMC)
+# =============================================================================
 import os
+import shutil
 import re
-Debug = False
+import argparse
+
+
+Debug = True
+
 
 def Title():
-    os.system('mode con: cols=50 lines=30')
+    # os.system('mode con: cols=50 lines=30')
     print("    _       _                  _          _  ")
     print("   /_\ _  _| |_ ___ _ __  __ _| |_ ___ __| | ")
     print("  / _ \ || |  _/ _ \ '  \/ _` |  _/ -_) _` | ")
@@ -28,75 +33,77 @@ def Title():
     print("           |___/                         ")
     print("")
 
+
 def AddZero(inputString):
-    if(int(inputString) <10):
-        return str('0' + str(int(inputString)))
-    return(inputString)
+    return str(inputString).zfill(2)
 
-def main():
-    resultv = [[("-")]*2]
-    results = [[("-")]*2]
-    folder = os.getcwd()
-    sname = str(input("Enter the name of the TV Show: "))
+
+def main(path=None):
+    results_extras = results_video = []
+    # If path is specified, it will use that otherwise it will get the current directory
+    folder = path or os.getcwd()
+    
+    sname = input("Enter the name of the TV Show: ")
     season = int(input("Enter the Season Number of the TV Show: "))
-    i = int(input("Enter the Episode Number to start from: "))
-    i1 = i
-    cwd = os.getcwd() + "\\"
-    mainp = str(cwd + "Output\\Series\\" + sname)
-    mainp1 = str(cwd + "Output\\Series\\" + sname +"\\Season "+ str(int(season)))
-    dirall = os.listdir(folder)
-    dirall.sort()
+    episode_number = int(input("Enter the Episode Number to start from: "))
 
-    for f in dirall:
-        if (f.endswith(".mp4") or f.endswith(".mkv")):
-            extn = f[(len(f)-4) : len(f)]
-            episode = AddZero(str(i))
-            i = i + 1
-            Final = "S"+AddZero(season)+"E"+episode+extn
-            resultv.append(((cwd + str(f)) , str(mainp1 + '\\' + Final)))
+    output_folder = f"{folder}\\Output\\Series\\{sname}\\Season {season}"
+    dir_videos = [file for file in os.listdir(folder) if file[-4:] in ['.mp4', '.mkv', '.avi']]
+    dir_videos.sort()
+    dir_extras = [file for file in os.listdir(folder) if file[-4:] in ['.srt', '.sub', '.idx']]
+    dir_extras.sort()
 
-        elif(f.endswith(".srt") or f.endswith(".sub") or f.endswith(".idx")):
-            extn = f[(len(f)-4) : len(f)]
-            episode = AddZero(str(i1))
-            i1 = i1 + 1
-            Final = "S"+AddZero(season)+"E"+episode+extn
-            results.append(((cwd + str(f)) , str(mainp1 + '\\' + Final)))
+    def get_new_names(list_of_files, list_to_append_to, episode_number_to_start_at):
+        for idx, file in enumerate(list_of_files):
+            extn = file[-4:]
+            episode = AddZero(idx + episode_number_to_start_at)
+            Final = f"S{AddZero(season)}E{episode}{extn}"
+            list_to_append_to.append(((f"{folder}\\{file}"), f"{output_folder}\\{Final}"))
 
-    if Debug==True:
-        for (f, n) in resultv:
-            if(f!="-") and (n!="-"):
-                print(f," -> ",n)
-                print()
-        for (f, n) in results:
-            if(f!="-") and (n!="-"):
-                print(f," -> ",n)
-                print()
-    else:
-        try:
-            os.mkdir(str(os.getcwd())+"\\Output")
-        except FileExistsError:
-            pass
-        try:
-            os.mkdir(str(os.getcwd())+"\\Output\\Series")
-        except FileExistsError:
-            pass
-        try:
-            os.mkdir(mainp)
-        except FileExistsError:
-            pass
-        try:
-            os.mkdir(mainp1)
-        except FileExistsError:
-            pass
-        for (f, n) in resultv:
-            if(f!="-") and (n!="-"):
-                os.rename(f,n)
-        for (f, n) in results:
-            if(f!="-") and (n!="-"):
-                os.rename(f,n)
+    get_new_names(dir_videos, results_video, episode_number)
+    get_new_names(dir_extras, results_extras, episode_number)
+
+    if Debug == True:
+        for (f, n) in results_video:
+            print(f"{f} -> {n}\n")
+        for (f, n) in results_extras:
+            print(f"{f} -> {n}\n")
+    answer = input("\n\nRun the renamer? [yes/no]: ")
+    if ("y" in answer.lower()):
+        print("Running...\n\n")
+        if (os.path.exists(folder+"\\Output\\Series") == False):
+            os.makedirs(folder+"\\Output\\Series")
+        if (os.path.exists(output_folder) == False):
+            os.makedirs(output_folder)
+        for (f, n) in results_video:
+            if(f != "-") and (n != "-"):
+                shutil.move(f, n)
+        for (f, n) in results_extras:
+            if(f != "-") and (n != "-"):
+                shutil.move(f, n)
 
 
 if __name__ == '__main__':
+    path = None
+
+    parser = argparse.ArgumentParser(description='''To Automate the boring process of renaming files for your TV Shows library
+    Useful for organising bulk media files or frequent updation of
+    your XBMC library (Like Kodi, Plex and OSMC)''')
+
+    # default=os.getcwd()
+    # Add in if you want
+    parser.add_argument('-p', '--path', type=str,
+                        help='To orgainise TV Shows in the specified directory')
+
+    args = parser.parse_args()
+    if (args.path):
+        if (os.path.exists(args.path)):
+            path = args.path
+        else:
+            print(
+                f"\n\nERROR: '{args.path}' is not a valid path\n\n\nPlease try again!\n")
+            exit()
+
     Title()
-    main()
+    main(path)
     print("Process Complete!")

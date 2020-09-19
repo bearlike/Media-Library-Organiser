@@ -1,11 +1,13 @@
-##=============================================================================
-##  Code Written by ~KK~
-##  Runs Both RENAME-MOVIES and RENAME-SERIES
-##  Useful for organising bulk media files or frequent updation of
-##  your XBMC library (Like Kodi, Plex and OSMC)
-##=============================================================================
+# =============================================================================
+# Code Written by ~KK~
+# Runs Both RENAME-MOVIES and RENAME-SERIES
+# Useful for organising bulk media files or frequent updation of
+# your XBMC library (Like Kodi, Plex and OSMC)
+# =============================================================================
 import os
 import msvcrt
+
+
 def Title():
     os.system('mode con: cols=50 lines=30')
     print("    _       _                  _          _  ")
@@ -26,25 +28,23 @@ def Title():
     print("")
 
 
-while(1==1):
+while(1):
     os.system("cls")
     Title()
-    print("")
-    print(" Menu")
-    print("=======")
+    print("\n Menu")
+    print("="*8)
     print("1. Rename and Organise Movies")
     print("2. Rename and Organise TV Shows")
-    print("3. Exit Program")
-    print("")
-    print("Enter you Choice: ",end='')
-    ch=int(input())
-    if ch==1:
+    print("3. Exit Program\n")
+    # print("Enter you Choice: ",end='')
+    ch = int(input("Enter you Choice: "))
+    if ch == 1:
         os.system("py RENAME-Movies.py")
-    elif ch==2:
+    elif ch == 2:
         os.system("py RENAME-Series.py")
-    elif ch==3:
-        print("Press any key to exit... ")
-        msvcrt.getch()
+    elif ch == 3:
+        # print("Press any key to exit... ")
+        # msvcrt.getch()
         exit()
     else:
         print("Invalid Choice ")
