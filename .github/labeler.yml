@@ -1,0 +1,32 @@
+dependencies:
+  - "package-lock.json"
+
+documentation:
+  - "**/*.md"
+
+api:
+  - "pages/api/*"
+  - "src/api/*"
+
+tests:
+  - "**/*.test.*"
+  - "cypress/**/*"
+  - "jest*.js"
+
+invoices:
+  - "pages/invoices/*"
+  - "src/invoices/*"
+
+auth:
+  - "pages/login.tsx"
+  - "src/auth/*"
+
+layout:
+  - "src/layout/*"
+
+utils:
+  - "src/utils/*"
+
+clients:
+  - "pages/clients.tsx"
+  - "src/clients/*"
