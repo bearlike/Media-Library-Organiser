@@ -1,5 +1,5 @@
 # [Media Library Organiser](https://krishnaalagiri.github.io/Media-Library-Organiser/)
-###### `v1.1-a1` `No-GUI`  
+###### `v1.1-a1` `No-GUI`
 ### Features
 - Offline Movie files are renamed and organized in format:
   ```bash

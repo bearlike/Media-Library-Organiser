@@ -29,11 +29,11 @@ What things you need to run the program:
     pip install strsim
     pip install imdbpy
     ```
-  
+
 ## Usage
 * Step 1: Move all the media files that are to be renamed and organised into "/Input" folder.
 * Step 2: Run the appropirate .py file **RENAME-Movies.py** or **RENAME-Series.py**
-* Step 3: If no error occurs, the organized files would be inside "/Output" folder    
+* Step 3: If no error occurs, the organized files would be inside "/Output" folder
 
 ### Screenshot
 #### RENAME-Movies.py
@@ -47,4 +47,3 @@ What things you need to run the program:
 ## Acknowledgments
 * Hat tip to anyone whose code was used.
 * Myself :P
-
