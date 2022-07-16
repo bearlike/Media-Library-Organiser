@@ -21,6 +21,10 @@ jobs:
         id: changelog
         with:
           github-token: ${{ secrets.github_token }}
+          fallback-version: 1.3.0
+          skip-version-file: true
+          skip-on-empty: 'false'
+
 
       - name: Create Release
         uses: actions/create-release@v1
