@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
   Code Written by ~KK~
   To Automate the boring process of renaming files for your TV Shows library
@@ -6,40 +7,25 @@
 """
 import os
 import re
-import msvcrt, shutil
+import msvcrt
+import shutil
 from imdb import IMDb
 from similarity.damerau import Damerau
 
-# Returns most closest Movie name
-def find_most_apt(name, movies):
-    damerau = Damerau()
-    deg = []
-    for movie in movies:
-        if(name.upper() == movie.upper()):
-            return(movie)
-        else:
-            deg.append(damerau.distance(name.upper(), movie.upper()))
-    indd = int(deg.index(min(deg)))
-    mostapt = movies[indd]
-    if (mostapt == ""):
-        mostapt = name
-    return(mostapt)
 
-# Find any URLs present in FileName
-def Find(string):
-    url = re.findall('www.(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\)]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', string)
-    return (url[0])
 
-def lastIndexOf(str1,toFind):
+def lastIndexOf(str1, toFind):
     index = len(str1)-1
     i = 0
     for ch in str1:
         if(ch == toFind):
             index = i
-        i+=1
+        i += 1
     return(index)
 
 # Returns a List Movie name and release year using imDB from Old_FileName
+
+
 def main_imdb(str21):
     ia = IMDb()
     s_result = ia.search_movie(str21)
@@ -48,26 +34,16 @@ def main_imdb(str21):
         if(movie['kind'] == 'movie'):
             str2 = movie['title']
             try:
-                year_str= movie['year']
+                year_str = movie['year']
             except:
-                year_str= "----"
+                year_str = "----"
             movies.append(str2+" ("+str(year_str)+")")
     return(movies)
 
-# Remove Illegal Name characters
-def removeIllegal(str):
-    str=str.replace('<',"")
-    str=str.replace('>',"")
-    str=str.replace(':',"")
-    str=str.replace('"',"")
-    str=str.replace('/',"")
-    str=str.replace('\\',"")
-    str=str.replace('|',"")
-    str=str.replace('?',"")
-    str=str.replace('*',"")
-    return(str)
 
 # Print Program Title
+
+
 def Title():
     os.system("cls")
     os.system('mode con: cols=75 lines=30')
@@ -89,6 +65,8 @@ def Title():
     print("")
 
 # Primitive FileName Formatting
+
+
 def FormatStr(temp):
     rest = temp
     if ".1080p" in temp:
@@ -102,18 +80,20 @@ def FormatStr(temp):
     elif "720p" in temp:
         sep = "720p"
     if "TamilRockers" in temp:
-        temp = temp.split(' - ',1)[1]
+        temp = temp.split(' - ', 1)[1]
     try:
-        rest = temp.split(sep,1)[0]
+        rest = temp.split(sep, 1)[0]
     except:
         pass
-    rest = rest.replace("."," ")
-    rest = rest.replace("-"," ")
-    rest = rest.replace("(","")
-    rest = rest.replace(")","")
+    rest = rest.replace(".", " ")
+    rest = rest.replace("-", " ")
+    rest = rest.replace("(", "")
+    rest = rest.replace(")", "")
     return(rest.strip())
 
 # Driver Code
+
+
 def main():
     Title()
     try:
@@ -129,32 +109,32 @@ def main():
     except FileExistsError:
         pass
     path = "Input\\Movies"
-    i=0
-    ErrorFlag=0
-    FileFlag=0
+    i = 0
+    ErrorFlag = 0
+    FileFlag = 0
     files = os.listdir(path)
     for file in files:
         temp = file
-        extn = file[(len(file)-4) : len(file)]
-        if(file.endswith(".mp4") or file.endswith(".mkv") or file.endswith(".srt")) :
+        extn = file[(len(file)-4): len(file)]
+        if(file.endswith(".mp4") or file.endswith(".mkv") or file.endswith(".srt")):
             Title()
             print(str(i)+" File(s) Processed....")
             try:
                 url = Find(temp)
                 # print(url)
-                temp = temp.replace(url,"")
+                temp = temp.replace(url, "")
             except:
                 pass
             rest = FormatStr(temp.strip())
-            year_str =  '('+ rest[len(rest)-4 : len(rest)] +')'
+            year_str = '(' + rest[len(rest)-4: len(rest)] + ')'
             rest = rest[0:len(rest)-4]
             Final = rest + year_str
-            print("Derived: ",Final)
+            print("Derived: ", Final)
             movies = main_imdb(rest + year_str)
-            rest = find_most_apt(Final, movies) # Sometimes causes error
+            rest = find_most_apt(Final, movies)  # Sometimes causes error
             rest = removeIllegal(Final)
             Final = rest + extn
-            print("Most Apt: ",Final)
+            print("Most Apt: ", Final)
             print()
             # Rename from old -> new happens below
             path_new = os.getcwd() + "\\Output\\Movies\\" + rest
@@ -171,20 +151,21 @@ def main():
             except FileExistsError:
                 pass
             try:
-                os.rename(os.path.join(path, file), os.path.join(path_new, Final ))
+                os.rename(os.path.join(path, file),
+                          os.path.join(path_new, Final))
             except:
-                print("Error - File Already Exist: "+rest )
-                FileFlag=1
-                ErrorFlag=1
-                i=i-1;
+                print("Error - File Already Exist: "+rest)
+                FileFlag = 1
+                ErrorFlag = 1
+                i = i-1
             # print(file)
-            i=i+1
+            i = i+1
     # Result Generation
     Title()
-    print ("All Files Processed...")
-    if(FileFlag==1):
+    print("All Files Processed...")
+    if(FileFlag == 1):
         print("Solution: Try again after removing the above file(s) from Output folder")
-    if(i>0 or ErrorFlag==1):
+    if(i > 0 or ErrorFlag == 1):
         print(str(i)+" File(s) Renamed and Organised Successfully")
         # if(i>0): os.system("explorer.exe " + str(os.getcwd() + "\Output\\"))
     else:
